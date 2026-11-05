@@ -24,6 +24,4 @@ class atendimento {
     }
 }
 
-
-
 export default new atendimento().model
