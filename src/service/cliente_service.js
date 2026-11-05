@@ -1,4 +1,5 @@
 import Cliente from '../model/cliente_model.js'
+import Atendimento from '../model/atendimento.js'
 
 class Service {
 
@@ -37,11 +38,11 @@ class Service {
         await ClienteAlterar.save()
     }
 
-    AlterarStatus(id) {
+    async AlterarStatus(id) {
          if (!id || isNaN(id)) {
             throw new Error ("Por favor informar os dados corretamente")
         }
-        Filmes.AlterarStatus(id)
+        await Service.AlterarStatus(id)
     }
 
     async Deletar(id) {
