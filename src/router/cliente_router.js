@@ -7,6 +7,7 @@ router.get("/buscar", Controller.Buscar)
 router.get("/buscarUm/:id", Controller.BuscarUm)
 router.post("/criar", Controller.Criar)
 router.put("/alterar/:id", Controller.Alterar)
+router.put("/alterarStatus", Controller.AlterarStatus)
 router.delete("/deletar/:id", Controller.Deletar)
 
 export default router

@@ -37,6 +37,13 @@ class Service {
         await ClienteAlterar.save()
     }
 
+    AlterarStatus(id) {
+         if (!id || isNaN(id)) {
+            throw new Error ("Por favor informar os dados corretamente")
+        }
+        Filmes.AlterarStatus(id)
+    }
+
     async Deletar(id) {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar o Id corretamente")

@@ -50,6 +50,18 @@ class Controller {
             res.send({ message: error.message })
         }
     }
+
+    AlterarStatus(req, res) {
+        try {
+            const id = req.params.id
+            const { dia, hora, valor, concluida } = req.body
+            Service.Alterar(id, dia, hora, valor, concluida)
+
+            res.send({ mensagem: "Status do atendimento alterado"})
+        } catch (error) {
+            res.send({ mensagem: error.message })
+        }
+    }
     
     async Deletar(req, res) {
         try {
