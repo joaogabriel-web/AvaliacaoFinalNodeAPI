@@ -1,5 +1,5 @@
 import Cliente from '../model/cliente_model.js'
-import Atendimento from '../model/atendimento.js'
+// import Atendimento from '../model/atendimento.js'
 
 class Service {
 
