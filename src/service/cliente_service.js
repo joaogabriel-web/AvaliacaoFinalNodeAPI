@@ -12,7 +12,7 @@ class Service {
             throw new Error("Favor informar somente números")
         }
 
-        return Cliente.BuscarUm(id)
+        return Cliente.findByPk(id)
     }
     // service
     async Criar(nome, idade, senha, email) {
