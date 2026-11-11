@@ -1,4 +1,4 @@
-database.js
+./src/config/database.js
 # Logs
 logs
 *.log
