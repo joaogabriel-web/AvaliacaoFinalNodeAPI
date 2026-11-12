@@ -1,6 +1,5 @@
 import database from "../config/database.js";
 
-
 class Cliente {
     constructor() {
         this.model = database.db.define("cliente", {

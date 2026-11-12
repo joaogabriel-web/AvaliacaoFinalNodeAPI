@@ -1,6 +1,6 @@
 import Service from '../service/cliente_service.js';
 
-class Controller {
+class ControllerCliente {
 
     async Buscar(req, res) {
         try {

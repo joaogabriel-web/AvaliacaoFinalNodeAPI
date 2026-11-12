@@ -1,7 +1,7 @@
 import Cliente from '../model/cliente_model.js'
 // import Atendimento from '../model/atendimento.js'
 
-class Service {
+class ServiceCliente {
 
     async Buscar() {
         return Cliente.findAll()
@@ -38,13 +38,6 @@ class Service {
         await ClienteAlterar.save()
     }
 
-    async AlterarStatus(id) {
-         if (!id || isNaN(id)) {
-            throw new Error ("Por favor informar os dados corretamente")
-        }
-        await Service.AlterarStatus(id)
-    }
-
     async Deletar(id) {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar o Id corretamente")
@@ -60,4 +53,4 @@ class Service {
     
 }
 
-export default new Service()
+export default new ServiceCliente()

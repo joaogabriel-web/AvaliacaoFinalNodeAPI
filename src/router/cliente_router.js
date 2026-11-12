@@ -1,13 +1,12 @@
 import express from  'express';
 import Controller from '../controller/cliente_controller.js';
 
-const router = express.Router();
+const routerCliente = express.Router();
 
-router.get("/buscar", Controller.Buscar)
-router.get("/buscarUm/:id", Controller.BuscarUm)
-router.post("/criar", Controller.Criar)
-router.put("/alterar/:id", Controller.Alterar)
-router.put("/alterarStatus/:id", Controller.AlterarStatus)
-router.delete("/deletar/:id", Controller.Deletar)
+routerCliente.get("/buscar", Controller.Buscar)
+routerCliente.get("/buscarUm/:id", Controller.BuscarUm)
+routerCliente.post("/criar", Controller.Criar)
+routerCliente.put("/alterar/:id", Controller.Alterar)
+routerCliente.delete("/deletar/:id", Controller.Deletar)
 
-export default router
+export default routerCliente
