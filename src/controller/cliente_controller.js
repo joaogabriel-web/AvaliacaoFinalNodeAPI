@@ -12,10 +12,10 @@ class ControllerCliente {
         }
     }
 
-    BuscarUm(req, res) {
+    async BuscarUm(req, res) {
         try {
             const id = req.params.id
-            const nome = Service.BuscarUm(id)
+            const nome = await Service.BuscarUm(id)
 
             res.send({ nome })
         } catch (error) {
@@ -51,11 +51,11 @@ class ControllerCliente {
         }
     }
 
-    AlterarStatus(req, res) {
+    async AlterarStatus(req, res) {
         try {
             const id = req.params.id
             const { dia, hora, valor, concluida } = req.body
-            Service.Alterar(id, dia, hora, valor, concluida)
+            await Service.Alterar(id, dia, hora, valor, concluida)
 
             res.send({ mensagem: "Status do atendimento alterado"})
         } catch (error) {
