@@ -10,7 +10,7 @@ app.use("/api", router)
 app.use("/atendimento", routerA)
 
 database.db
-    .sync({ force: false })
+    .sync({ force: true })
     .then((_) => {
         app.listen(3000, () => {
             console.log("Servidor ouvindo na porta 3000")

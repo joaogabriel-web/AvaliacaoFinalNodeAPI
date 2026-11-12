@@ -76,4 +76,4 @@ class ControllerCliente {
 
 }
 
-export default new Controller()
+export default new ControllerCliente()
