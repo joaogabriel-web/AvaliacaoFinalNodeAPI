@@ -7,15 +7,15 @@ class ServiceCliente {
         return Cliente.findAll()
     }
     
-    BuscarUm(id) {
+    async BuscarUm(id) {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar somente números")
         }
 
-        return Cliente.findByPk(id)
+        return await Cliente.findByPk(id)
     }
     // service
-    async Criar(nome, idade, senha, email) {
+    async Criar(nome, senha, email) {
         if(!nome || !senha || !email) {
             throw new Error("Favor informar os campos obrigatorios")
         }

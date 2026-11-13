@@ -7,12 +7,12 @@ class Service {
         return atendimento.findAll()
     }
     
-    BuscarUm(id) {
+    async BuscarUm(id) {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar somente números")
         }
 
-        return atendimento.findByPk(id)
+        return await atendimento.findByPk(id)
     }
     // service
     async Criar(dia, hora, valor, concluido) {
@@ -49,7 +49,7 @@ class Service {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar o Id corretamente")
         }
-        const atendimentoDelete = await Cliente.findByPk(id)
+        const atendimentoDelete = await atendimento.findByPk(id)
 
         if(!atendimentoDelete) {
             throw new Error("Favor informar o Id corretamente")
