@@ -23,7 +23,7 @@ class Service {
         await atendimento.create({ dia, hora, valor, concluido })
     }
     
-    async Alterar(id, dia, valor) {
+    async Alterar(id, dia, hora, valor, concluido) {
         if(!id || isNaN(id) || !dia  || !valor) {
             throw new Error("Favor informar todos os dados")
         }
@@ -34,15 +34,22 @@ class Service {
         }
 
         atendimentoAlterar.dia = dia
+        atendimentoAlterar.hora = hora
+        atendimentoAlterar.valor = valor
+        atendimentoAlterar.concluido = concluido
 
         await atendimentoAlterar.save()
     }
 
-    async AlterarStatus(id) {
-         if (!id || isNaN(id)) {
-            throw new Error ("Por favor informar os dados corretamente")
+    async AlterarStatus(id, concluido) {
+        const atendimentoAlterar = await atendimento.findByPk(id)
+
+        if (!atendimentoAlterar || isNaN(atendimentoAlterar)) {
+            throw new Error ("Atendimento não encontrado")
         }
-        await Service.AlterarStatus(id)
+
+        atendimentoAlterar.concluido = concluido
+        await atendimentoAlterar.save()
     }
 
     async Deletar(id) {

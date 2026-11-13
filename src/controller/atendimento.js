@@ -38,29 +38,28 @@ class Controller {
     }
     
     async Alterar(req, res) {
-        try {
-            const id = req.params.id
-            const dia = req.params.dia
-            const hora = req.body.hora
-            const valor = req.body.valor
-            const concluido = req.body.concluido   
-            await Service.Alterar(id, dia, hora, valor, concluido )
+    try {
+        const { id } = req.params
+        const { dia, hora, valor, concluido } = req.body
 
-            res.send({ message: "Alterado com sucesso!" })
+        await Service.Alterar(id, dia, hora, valor, concluido)
+
+        return res.send({ message: "Alterado com sucesso!" })
         } catch (error) {
-            res.send({ message: error.message })
+        return res.send({ message: error.message })
         }
     }
 
     async AlterarStatus(req, res) {
         try {
-            const id = req.params.id
-            const { dia, hora, valor, concluida } = req.body
-            await Service.Alterar(id, dia, hora, valor, concluida)
+            const { id } = req.params
+            const { concluido } = req.body
 
-            res.send({ mensagem: "Status do atendimento alterado"})
+            await Service.AlterarStatus(id, concluido)
+
+            return res.send({ message: "Status do atendimento alterado" })
         } catch (error) {
-            res.send({ mensagem: error.message })
+            return res.send({ message: error.message })
         }
     }
     
